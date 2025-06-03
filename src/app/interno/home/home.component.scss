@@ -1,89 +1,89 @@
 .home-container {
-  min-height: 100vh;
+  min-height: 100vh; /* altura mínima 100% da viewport */
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 40px 20px;
-  background: radial-gradient(circle at center, #cde3ff 0%, #004aad 100%);
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: flex-start; /* alinha no topo verticalmente */
+  padding: 40px 20px; /* espaçamento interno */
+  background: radial-gradient(circle at center, #cde3ff 0%, #004aad 100%); /* fundo degradê */
 }
 
 .home-box {
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-  padding: 50px;
-  max-width: 1200px;
-  width: 100%;
-  text-align: center;
+  background: #ffffff; /* fundo branco */
+  border-radius: 16px; /* bordas arredondadas */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* sombra para destaque */
+  padding: 50px; /* espaçamento interno */
+  max-width: 1200px; /* largura máxima */
+  width: 100%; /* ocupa toda largura possível */
+  text-align: center; /* texto centralizado */
 }
 
 .title {
-  font-size: 2.8rem;
-  margin-bottom: 40px;
-  color: #004aad;
+  font-size: 2.8rem; /* tamanho da fonte */
+  margin-bottom: 40px; /* espaçamento abaixo do título */
+  color: #004aad; /* cor azul */
 }
 
 .conteudo {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-  text-align: left;
+  display: flex; /* usa flexbox para distribuir */
+  justify-content: space-between; /* espaço entre os elementos filhos */
+  align-items: flex-start; /* alinhados ao topo */
+  gap: 40px; /* espaçamento entre os elementos */
+  text-align: left; /* texto alinhado à esquerda */
 }
 
 .botoes {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-direction: column; /* empilha botões verticalmente */
+  gap: 20px; /* espaçamento entre botões */
 
   .btn {
-  background-color: #004aad;
-  color: white;
-  font-weight: 700;
-  font-size: 1.1rem;
-  padding: 14px 24px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  width: 100%;
+    background-color: #004aad; /* cor de fundo azul */
+    color: white; /* texto branco */
+    font-weight: 700; /* negrito */
+    font-size: 1.1rem;
+    padding: 14px 24px; /* espaçamento interno */
+    border: none;
+    border-radius: 10px; /* cantos arredondados */
+    cursor: pointer; /* cursor de mãozinha */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* animações ao passar o mouse */
+    width: 100%; /* ocupa toda largura do container */
 
     &:hover {
-      background-color: #002f6c;
-      transform: scale(1.05);
+      background-color: #002f6c; /* azul mais escuro ao passar o mouse */
+      transform: scale(1.05); /* aumenta um pouco o botão */
     }
 
     &.disabled {
-      background-color: #cccccc;
-      pointer-events: none;
+      background-color: #cccccc; /* cinza para botão desativado */
+      pointer-events: none; /* desativa cliques */
     }
   }
 }
 
 .destaques-empilhados {
-  flex: 1;
+  flex: 1; /* ocupa o espaço restante */
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* empilha verticalmente */
   gap: 30px;
 
   .destaque-card {
-    background-color: #f4faff;
+    background-color: #f4faff; /* fundo azul claro */
     padding: 30px;
     border-radius: 12px;
 
     h2 {
-      color: #004aad;
+      color: #004aad; /* título azul */
       margin-bottom: 20px;
     }
 
     .livro-card {
       background-color: white;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* sombra leve */
       overflow: hidden;
 
       .livro-header {
-        background-color: #004aad;
+        background-color: #004aad; /* cabeçalho azul */
         color: white;
         font-weight: bold;
         padding: 10px 20px;
@@ -95,15 +95,15 @@
         padding: 20px;
 
         img {
-          max-width: 150px;
+          max-width: 150px; /* largura máxima da imagem */
           height: auto;
-          border-radius: 8px;
+          border-radius: 8px; /* cantos arredondados */
         }
       }
 
       .livro-footer {
         padding: 10px 20px;
-        background-color: #f0f4ff;
+        background-color: #f0f4ff; /* fundo azul clarinho */
 
         .resumo {
           margin: 0;

@@ -6,29 +6,34 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
- standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, FormsModule,RouterModule],
+  standalone: true, // Componente standalone
+  imports: [ReactiveFormsModule, CommonModule, FormsModule, RouterModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  email: string = '';
-  senha: string = '';
-  erro: string = '';
+  email: string = ''; // Propriedade ligada ao input de email
+  senha: string = ''; // Propriedade ligada ao input de senha
+  erro: string = '';  // Mensagem de erro em caso de falha no login
 
   constructor(private authService: AuthService, private router: Router) {}
 
+  // Função executada ao enviar o formulário
   fazerLogin() {
+    this.erro = ''; // Limpa o erro anterior
     this.authService.login(this.email, this.senha).subscribe(sucesso => {
       if (sucesso) {
+        // Login bem-sucedido, redireciona para a home
         this.router.navigateByUrl('/interno/home');
       } else {
+        // Mostra mensagem de erro
         this.erro = 'Email ou senha inválidos';
       }
     });
   }
 
-  gotoCadastro(){
+  // Redireciona para a tela de cadastro
+  gotoCadastro() {
     this.router.navigate(['externo/cadastro']);
   }
 }

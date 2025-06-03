@@ -1,30 +1,54 @@
+<!-- Seção principal com fundo em gradiente -->
 <section class="login-section">
   <div class="login-card">
 
-    <div class="login-img">
-      <img src="" alt="" />
+    <!-- Lado esquerdo: imagem ilustrativa -->
+    <div class="login-image">
+      <img src="assets/imagens/login-img.png" alt="Imagem de login" />
     </div>
 
+    <!-- Lado direito: formulário de login -->
     <div class="login-form">
 
       <h3>Login</h3>
 
+      <!-- Formulário com template-driven (ngModel) -->
       <form (ngSubmit)="fazerLogin()" #form="ngForm">
         
+        <!-- Campo de email -->
         <div>
-          <label>Email:</label>
-          <input type="email" name="email" placeholder="Digite seu E-mail:" [(ngModel)]="email" required />
+          <label for="email">Email:</label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            placeholder="Digite seu E-mail:"
+            [(ngModel)]="email"
+            required
+          />
         </div>
 
+        <!-- Campo de senha -->
         <div>
-          <label>Senha:</label>
-          <input type="password" name="senha" placeholder="Digite sua Senha:" [(ngModel)]="senha" required />
+          <label for="senha">Senha:</label>
+          <input
+            id="senha"
+            type="password"
+            name="senha"
+            placeholder="Digite sua Senha:"
+            [(ngModel)]="senha"
+            required
+          />
         </div>
 
+        <!-- Botão de envio desabilitado se o formulário for inválido -->
         <button type="submit" [disabled]="form.invalid" class="btn">Entrar</button>
+
+        <!-- Exibe erro se houver -->
         <p *ngIf="erro" class="erro">{{ erro }}</p>
 
-        <button (click)="gotoCadastro()" class="btn-cadastro">Cadastre-se</button>
+        <!-- Botão para redirecionar para a tela de cadastro -->
+        <button (click)="gotoCadastro()" type="button" class="btn-cadastro">Cadastre-se</button>
       </form>
     </div>
   </div>

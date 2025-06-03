@@ -1,11 +1,11 @@
 .add-livro-container {
-  max-width: 600px;
-  margin: 40px auto;
-  background-color: #f5faff;
-  border-radius: 16px;
-  padding: 40px 30px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  color: #004aad;
+  max-width: 600px;                       // Largura máxima do contêiner
+  margin: 40px auto;                      // Centraliza na página com margem superior
+  background-color: #f5faff;              // Cor de fundo clara
+  border-radius: 16px;                    // Cantos arredondados
+  padding: 40px 30px;                     // Espaçamento interno
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);  // Sombra suave
+  color: #004aad;                         // Cor do texto principal
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -97,4 +97,3 @@
 .btn.cancelar:hover {
   background-color: #922b22;
 }
-

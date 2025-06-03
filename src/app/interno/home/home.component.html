@@ -1,42 +1,47 @@
 <div class="home-container">
+  <!-- Container principal da página, centraliza o conteúdo e aplica o fundo -->
   <div class="home-box">
-    <h1 class="title">AlphaClass</h1>
+    <!-- Caixa branca com sombra onde todo o conteúdo fica -->
+    <h1 class="title">AlphaClass</h1> 
+    <!-- Título da página -->
 
     <div class="conteudo">
-      <!-- Botões do lado esquerdo -->
+      <!-- Área principal dividida entre botões à esquerda e destaques à direita -->
+
+      <!-- Botões de navegação do lado esquerdo -->
       <nav class="botoes">
         <button (click)="gotoPerfil()" class="btn">Painel Admin</button>
         <button (click)="gotoLivros()" class="btn">Livros</button>
-        <button (click)="gotoadicionarLivro()" class="btn">
-          + Adicionar Livro
-        </button>
+        <button (click)="gotoadicionarLivro()" class="btn">+ Adicionar Livro</button>
         <button (click)="gotobuscar()" class="btn">Buscar por Categoria</button>
         <button (click)="gotoCadastro()" class="btn">Cadastro</button>
       </nav>
 
       <!-- Destaques do lado direito -->
       <div class="destaques-empilhados">
-        <!-- Botão de adicionar livro -->
-
+        <!-- Seção "Mais Recentes" -->
         <div class="destaque-card">
           <h2>Mais Recentes</h2>
           <div class="livro-lista">
+            <!-- Loop que renderiza os livros mais recentes -->
             <div class="livro-card" *ngFor="let livro of livrosRecentes">
-              <div class="livro-header">{{ livro.titulo }}</div>
+              <div class="livro-header">{{ livro.titulo }}</div> <!-- Título do livro -->
               <div class="livro-body">
-                <img [src]="livro.capa" alt="Capa do Livro" />
+                <img [src]="livro.capa" alt="Capa do Livro" /> <!-- Capa do livro -->
               </div>
               <div class="livro-footer">
-                <p class="resumo">{{ livro.resumo }}</p>
-                <p class="autor">Autor: {{ livro.autor }}</p>
+                <p class="resumo">{{ livro.resumo }}</p> <!-- Resumo do livro -->
+                <p class="autor">Autor: {{ livro.autor }}</p> <!-- Nome do autor -->
               </div>
             </div>
           </div>
         </div>
 
+        <!-- Seção "Populares" -->
         <div class="destaque-card">
           <h2>Populares</h2>
           <div class="livro-lista">
+            <!-- Loop que renderiza os livros mais lidos -->
             <div class="livro-card" *ngFor="let livro of livrosMaisLidos">
               <div class="livro-header">{{ livro.titulo }}</div>
               <div class="livro-body">

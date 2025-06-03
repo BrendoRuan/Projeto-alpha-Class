@@ -1,24 +1,31 @@
 <section class="livros-page">
+  <!-- Título da página -->
   <h2>📚 Todos os Livros Cadastrados</h2>
 
+  <!-- Mensagem exibida quando não há livros cadastrados -->
   <div *ngIf="livros.length === 0" class="sem-livros">
     Nenhum livro cadastrado ainda.
   </div>
 
+  <!-- Grid que exibe os livros quando a lista não está vazia -->
   <div class="livros-grid" *ngIf="livros.length > 0">
+    <!-- Loop para mostrar cada livro da lista -->
     <div class="livro-card" *ngFor="let livro of livros">
+      <!-- Cabeçalho do cartão com título do livro -->
       <div class="card-header">
         <h3>{{ livro.titulo }}</h3>
       </div>
 
+      <!-- Corpo do cartão com imagem da capa -->
       <div class="card-body">
         <img
-          [src]="livro.capa"
-          alt="Capa do livro {{ livro.titulo }}"
-          onerror="this.src='assets/capas/default.jpg'"
+          [src]="livro.capa" 
+          alt="Capa do livro {{ livro.titulo }}" 
+          onerror="this.src='assets/capas/default.jpg'" 
         />
       </div>
 
+      <!-- Rodapé do cartão com resumo, autor e categoria -->
       <div class="card-footer">
         <p class="resumo">{{ livro.resumo }}</p>
         <p class="autor">Autor: {{ livro.autor }}</p>
@@ -27,6 +34,7 @@
     </div>
   </div>
 
+  <!-- Botão para voltar à página home -->
   <div class="btn-voltarhome">
     <button class="btn-voltar" (click)="gotoVoltarhome()">Voltar</button>
   </div>

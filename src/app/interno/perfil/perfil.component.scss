@@ -1,216 +1,216 @@
 .perfil-container {
-  min-height: 100vh;
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: 0 auto;
+  min-height: 100vh; /* Garante que o container ocupe a altura total da tela */
+  padding: 40px 20px; /* Espaçamento interno vertical e horizontal */
+  max-width: 900px; /* Largura máxima do container */
+  margin: 0 auto; /* Centraliza horizontalmente */
   
-  border-radius: 16px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-  color: #004aad;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 16px; /* Bordas arredondadas do container */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+  color: #004aad; /* Cor principal do texto */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte padrão */
 }
 
 .perfil-container h2 {
-  font-size: 2.8rem;
-  margin-bottom: 30px;
-  text-align: center;
+  font-size: 2.8rem; /* Tamanho grande para o título principal */
+  margin-bottom: 30px; /* Espaço abaixo do título */
+  text-align: center; /* Centraliza o texto do título */
 }
 
 section {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 25px 30px;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: #ffffff; /* Fundo branco para seções */
+  border-radius: 12px; /* Bordas arredondadas nas seções */
+  padding: 25px 30px; /* Espaçamento interno das seções */
+  margin-bottom: 30px; /* Espaço entre as seções */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave para as seções */
 }
 
 section h3 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #004aad;
-  padding-bottom: 8px;
+  font-size: 1.8rem; /* Tamanho do subtítulo da seção */
+  margin-bottom: 20px; /* Espaço abaixo do subtítulo */
+  border-bottom: 2px solid #004aad; /* Linha azul abaixo do subtítulo */
+  padding-bottom: 8px; /* Espaço interno abaixo do texto do subtítulo */
 }
 
 ul {
-  list-style: none;
-  padding-left: 0;
-  max-height: 250px;
-  overflow-y: auto;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  background-color: #f9faff;
+  list-style: none; /* Remove os marcadores padrão */
+  padding-left: 0; /* Remove o recuo padrão da lista */
+  max-height: 250px; /* Altura máxima da lista para limitar espaço */
+  overflow-y: auto; /* Ativa a barra de rolagem vertical se necessário */
+  margin-bottom: 20px; /* Espaço abaixo da lista */
+  border: 1px solid #ddd; /* Borda clara ao redor da lista */
+  border-radius: 10px; /* Bordas arredondadas para a lista */
+  background-color: #f9faff; /* Fundo azul muito claro */
 }
 
 ul li {
-  padding: 12px 16px;
-  border-bottom: 1px solid #eee;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 600;
-  color: #002f6c;
+  padding: 12px 16px; /* Espaço interno dos itens da lista */
+  border-bottom: 1px solid #eee; /* Linha separadora entre itens */
+  display: flex; /* Layout flexível para alinhamento */
+  justify-content: space-between; /* Espaço entre conteúdo e botões */
+  align-items: center; /* Alinha verticalmente ao centro */
+  font-weight: 600; /* Negrito médio */
+  color: #002f6c; /* Cor azul escura para texto */
 }
 
 ul li:last-child {
-  border-bottom: none;
+  border-bottom: none; /* Remove a linha inferior do último item */
 }
 
 ul li strong {
-  flex: 1;
+  flex: 1; /* O texto em negrito ocupa todo o espaço disponível */
 }
 
 ul li button {
-  margin-left: 10px;
-  background-color: #004aad;
-  color: white;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-left: 10px; /* Espaço entre botões */
+  background-color: #004aad; /* Cor azul escura para botão */
+  color: white; /* Texto branco */
+  border: none; /* Sem borda */
+  padding: 8px 14px; /* Espaçamento interno do botão */
+  border-radius: 8px; /* Bordas arredondadas */
+  font-weight: 600; /* Texto em negrito */
+  cursor: pointer; /* Cursor de mão para indicar clique */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Animação suave para hover */
 }
 
 ul li button:hover {
-  background-color: #002f6c;
-  transform: scale(1.05);
+  background-color: #002f6c; /* Cor azul mais escura no hover */
+  transform: scale(1.05); /* Leve aumento no tamanho ao passar o mouse */
 }
 
 form {
-  background: #f4faff;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: inset 0 0 8px #cce0ff;
+  background: #f4faff; /* Fundo azul clarinho para o formulário */
+  border-radius: 10px; /* Bordas arredondadas no formulário */
+  padding: 20px; /* Espaçamento interno */
+  box-shadow: inset 0 0 8px #cce0ff; /* Sombra interna azul clara */
 }
 
 form h4 {
-  margin-bottom: 15px;
-  color: #004aad;
+  margin-bottom: 15px; /* Espaço abaixo do título do formulário */
+  color: #004aad; /* Cor azul para o título */
 }
 
 form label {
-  display: flex;
-  flex-direction: column;
-  font-weight: 600;
-  margin-bottom: 15px;
-  color: #003366;
+  display: flex; /* Layout flexível para o label */
+  flex-direction: column; /* Texto e input empilhados verticalmente */
+  font-weight: 600; /* Negrito para o texto do label */
+  margin-bottom: 15px; /* Espaço abaixo de cada label */
+  color: #003366; /* Azul escuro para o texto do label */
 }
 
 form input,
 form textarea {
-  margin-top: 6px;
-  padding: 8px 12px;
-  font-size: 1rem;
-  border-radius: 8px;
-  border: 1.5px solid #004aad;
-  transition: border-color 0.3s ease;
-  font-family: inherit;
+  margin-top: 6px; /* Espaço acima dos campos de entrada */
+  padding: 8px 12px; /* Espaçamento interno dos campos */
+  font-size: 1rem; /* Tamanho da fonte nos inputs e textarea */
+  border-radius: 8px; /* Bordas arredondadas */
+  border: 1.5px solid #004aad; /* Borda azul */
+  transition: border-color 0.3s ease; /* Transição suave para foco */
+  font-family: inherit; /* Usa mesma fonte do formulário */
 }
 
 form input:focus,
 form textarea:focus {
-  outline: none;
-  border-color: #002f6c;
-  background-color: #e6f0ff;
+  outline: none; /* Remove contorno padrão no foco */
+  border-color: #002f6c; /* Borda mais escura no foco */
+  background-color: #e6f0ff; /* Fundo azul claro no foco */
 }
 
 form textarea {
-  resize: vertical;
-  min-height: 80px;
+  resize: vertical; /* Permite redimensionar verticalmente */
+  min-height: 80px; /* Altura mínima do textarea */
 }
 
 form input[type="checkbox"] {
-  width: auto;
-  margin-top: 10px;
+  width: auto; /* Ajusta o tamanho do checkbox */
+  margin-top: 10px; /* Espaço acima do checkbox */
 }
 
 form button {
-  background-color: #004aad;
-  color: white;
-  font-weight: 700;
-  font-size: 1.1rem;
-  padding: 12px 26px;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  margin-right: 15px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  background-color: #004aad; /* Cor azul do botão */
+  color: white; /* Texto branco */
+  font-weight: 700; /* Negrito forte */
+  font-size: 1.1rem; /* Tamanho da fonte do botão */
+  padding: 12px 26px; /* Espaçamento interno */
+  border: none; /* Sem borda */
+  border-radius: 12px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor de mão */
+  margin-right: 15px; /* Espaço à direita para botões em sequência */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Animação suave */
 }
 
 form button:hover {
-  background-color: #002f6c;
-  transform: scale(1.05);
+  background-color: #002f6c; /* Cor mais escura no hover */
+  transform: scale(1.05); /* Leve aumento do botão */
 }
 
 form button[type="button"] {
-  background-color: #ccc;
-  color: #333;
+  background-color: #ccc; /* Botão cinza para cancelar */
+  color: #333; /* Texto escuro */
 }
 
 form button[type="button"]:hover {
-  background-color: #aaa;
-  transform: none;
+  background-color: #aaa; /* Cinza mais escuro no hover */
+  transform: none; /* Sem escala no hover para botão de cancelar */
 }
 
 .btn {
-  display: block;
-  margin: 0 auto;
-  background-color: #004aad;
-  color: white;
-  font-weight: 700;
-  font-size: 1.3rem;
-  padding: 14px 30px;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: block; /* Botão em bloco */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  background-color: #004aad; /* Azul escuro */
+  color: white; /* Texto branco */
+  font-weight: 700; /* Negrito forte */
+  font-size: 1.3rem; /* Fonte maior */
+  padding: 14px 30px; /* Espaçamento interno do botão */
+  border: none; /* Sem borda */
+  border-radius: 12px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor de mão */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave */
 }
 
 .btn:hover {
-  background-color: #002f6c;
-  transform: scale(1.05);
+  background-color: #002f6c; /* Azul mais escuro no hover */
+  transform: scale(1.05); /* Aumento leve no hover */
 }
 
 /* Scrollbar estilizado para as listas */
 ul::-webkit-scrollbar {
-  width: 8px;
+  width: 8px; /* Largura da barra de rolagem */
 }
 
 ul::-webkit-scrollbar-thumb {
-  background-color: #004aad;
-  border-radius: 10px;
+  background-color: #004aad; /* Cor azul da barra de rolagem */
+  border-radius: 10px; /* Bordas arredondadas da barra */
 }
 
 ul::-webkit-scrollbar-track {
-  background-color: #e6f0ff;
+  background-color: #e6f0ff; /* Fundo da barra de rolagem */
 }
 
 /* Responsividade simples */
 @media (max-width: 600px) {
   .perfil-container {
-    padding: 20px 15px;
+    padding: 20px 15px; /* Reduz padding em telas pequenas */
   }
 
   ul li {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column; /* Itens da lista empilhados verticalmente */
+    align-items: flex-start; /* Alinha à esquerda */
   }
 
   ul li button {
-    margin: 5px 0 0 0;
+    margin: 5px 0 0 0; /* Margem superior para botões em lista vertical */
   }
 
   form label {
-    font-size: 0.9rem;
+    font-size: 0.9rem; /* Reduz tamanho da fonte dos labels */
   }
 
   form button {
-    width: 100%;
-    margin: 10px 0 0 0;
+    width: 100%; /* Botões ocupam largura total em telas pequenas */
+    margin: 10px 0 0 0; /* Margem superior para separar os botões */
   }
 
   .btn {
-    width: 100%;
+    width: 100%; /* Botão principal ocupa largura total */
   }
 }

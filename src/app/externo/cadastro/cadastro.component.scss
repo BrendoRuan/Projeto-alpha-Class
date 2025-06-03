@@ -1,4 +1,4 @@
-/* Fundo gradiente da página */
+/* Seção com fundo gradiente e centralização de conteúdo */
 .cadastro-section {
   min-height: 100vh;
   display: flex;
@@ -8,7 +8,7 @@
   padding: 20px;
 }
 
-/* Card central do formulário */
+/* Card estilizado com sombra, padding e bordas arredondadas */
 .cadastro-card {
   background-color: white;
   border-radius: 15px;
@@ -22,7 +22,7 @@
   justify-content: center;
 }
 
-/* Título */
+/* Título centralizado e estilizado */
 .cadastro-card h2 {
   font-size: 2.2rem;
   font-weight: 700;
@@ -32,7 +32,7 @@
   text-align: center;
 }
 
-/* Estilo dos inputs */
+/* Estilo comum aos inputs */
 .cadastro-card form input {
   padding: 12px 15px;
   margin-bottom: 20px;
@@ -43,12 +43,13 @@
   width: 100%;
 }
 
+/* Estilo aplicado quando o input estiver focado */
 .cadastro-card form input:focus {
   border-color: #004aad;
   outline: none;
 }
 
-/* Mensagens de erro */
+/* Estilo das mensagens de erro */
 .cadastro-card form div[ng-reflect-ng-if],
 .cadastro-card form div.ng-invalid {
   color: red;
@@ -57,7 +58,7 @@
   margin-bottom: 15px;
 }
 
-/* Botão de cadastro */
+/* Botão de envio estilizado */
 .cadastro-card form button[type="submit"] {
   background-color: #004aad;
   color: white;
@@ -71,17 +72,19 @@
   width: 100%;
 }
 
+/* Efeito ao passar o mouse no botão */
 .cadastro-card form button[type="submit"]:hover {
   background-color: #002f6c;
   transform: scale(1.03);
 }
 
+/* Estilo do botão desativado */
 .cadastro-card form button[disabled] {
   background-color: #999;
   cursor: not-allowed;
 }
 
-/* Responsividade */
+/* Ajustes para dispositivos móveis */
 @media (max-width: 768px) {
   .cadastro-card {
     padding: 30px 25px;

@@ -1,12 +1,19 @@
 <div class="buscar-container">
+  <!-- Título da página -->
   <h2>Buscar Livros por Categoria</h2>
 
+  <!-- Botão para voltar à página Home -->
   <button class="btn-voltar" (click)="gotoVoltarHome()">Voltar ao Menu Home</button>
 
+  <!-- Campo de input para digitar a categoria, usando ngModel para two-way binding -->
   <input [(ngModel)]="categoria" placeholder="Digite a categoria" />
+
+  <!-- Botão para acionar o filtro -->
   <button (click)="filtrarPorCategoria()">Buscar</button>
 
+  <!-- Exibição dos resultados filtrados -->
   <div class="livro-resultados">
+    <!-- Loop para renderizar cada livro filtrado -->
     <div class="livro-card" *ngFor="let livro of livrosFiltrados">
       <h3>{{ livro.titulo }}</h3>
       <img [src]="livro.capa" alt="Capa do Livro" />

@@ -1,43 +1,82 @@
-import { Injectable } from '@angular/core';
-import { Observable, map, catchError, of } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core'; 
+// Importa o decorator Injectable, que permite injetar dependências no serviço
+
+import { Observable, map, catchError, of } from 'rxjs'; 
+// Importa classes e operadores do RxJS para trabalhar com streams e tratamento de dados assincronos
+
+import { HttpClient } from '@angular/common/http'; 
+// Importa o HttpClient para fazer requisições HTTP
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root' 
 })
-export class AuthService {
+// Define que o serviço AuthService será singleton e disponível em toda a aplicação (root injector)
 
-   private baseUrl = 'http://localhost:3000/usuarios';
+export class AuthService { 
+  // Declara a classe do serviço de autenticação
 
-  constructor(private http: HttpClient) {}
+  private baseUrl = 'http://localhost:3000/usuarios'; 
+  // URL base da API para o recurso de usuários
 
-  login(email: string, senha: string): Observable<boolean> {
-    return this.http.get<any[]>(`${this.baseUrl}?email=${email}&senha=${senha}`).pipe(
-      map(usuarios => {
-        const usuario = usuarios[0];
-        if (usuario) {
-          localStorage.setItem('usuarioLogado', JSON.stringify(usuario));
-          return true;
+  constructor(private http: HttpClient) {} 
+  // Injeta o HttpClient no construtor para poder usar requisições HTTP
+
+  login(email: string, senha: string): Observable<boolean> { 
+    // Método que recebe email e senha e retorna um Observable que emite true ou false conforme sucesso no login
+
+    return this.http.get<any[]>(`${this.baseUrl}?email=${email}&senha=${senha}`).pipe( 
+      // Realiza uma requisição GET para buscar usuário com email e senha fornecidos
+      // Retorna um array de usuários (tipagem any[])
+
+      map(usuarios => { 
+        // Operador map para transformar o resultado da requisição
+
+        const usuario = usuarios[0]; 
+        // Pega o primeiro usuário retornado (se existir)
+
+        if (usuario) { 
+          // Se encontrar um usuário válido...
+
+          localStorage.setItem('usuarioLogado', JSON.stringify(usuario)); 
+          // Salva os dados do usuário no localStorage para sessão
+
+          return true; 
+          // Retorna true indicando login bem-sucedido
         }
-        return false;
+        return false; 
+        // Se não encontrou usuário, retorna false (login falhou)
       })
     );
   }
 
-  logout() {
-    localStorage.removeItem('usuarioLogado');
+  logout() { 
+    // Método para logout do usuário
+
+    localStorage.removeItem('usuarioLogado'); 
+    // Remove os dados do usuário do localStorage, encerrando a sessão
   }
 
-  usuarioLogado() {
-    return JSON.parse(localStorage.getItem('usuarioLogado') || 'null');
+  usuarioLogado() { 
+    // Método que retorna o usuário logado atualmente, se houver
+
+    return JSON.parse(localStorage.getItem('usuarioLogado') || 'null'); 
+    // Pega o item 'usuarioLogado' do localStorage, converte de JSON para objeto, ou retorna null se não existir
   }
 
-  estaLogado(): boolean {
-    return !!localStorage.getItem('usuarioLogado');
+  estaLogado(): boolean { 
+    // Método que verifica se há um usuário logado
+
+    return !!localStorage.getItem('usuarioLogado'); 
+    // Retorna true se existir o item 'usuarioLogado' no localStorage, senão false
   }
 
-  getUsuarioLogadoId(): number | null {
-  const usuario = this.usuarioLogado();
-  return usuario ? usuario.id : null;
+  getUsuarioLogadoId(): number | null { 
+    // Método que retorna o ID do usuário logado ou null caso não haja
+
+    const usuario = this.usuarioLogado(); 
+    // Obtém o usuário logado atual
+
+    return usuario ? usuario.id : null; 
+    // Retorna o ID do usuário se existir, senão null
   }
 }

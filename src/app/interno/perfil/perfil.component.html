@@ -1,91 +1,153 @@
 <div class="body">
-    <div class="perfil-container">
-  <h2>Gerenciamento de Perfil</h2>
+  <!-- Container geral do corpo da página -->
+  <div class="perfil-container">
+    <!-- Container principal com estilos aplicados -->
 
-  <!-- USUÁRIOS -->
-  <section>
-    <h3>Usuários</h3>
-    <ul>
-      <li *ngFor="let usuario of usuarios">
-        <strong>{{ usuario.nome }}</strong> - {{ usuario.email }} - {{ usuario.telefone }}
-        <button (click)="editarUsuario(usuario)">Editar</button>
-        <button (click)="deletarUsuario(usuario)">Deletar</button>
-      </li>
-    </ul>
+    <h2>Gerenciamento de Perfil</h2>
+    <!-- Título principal da página -->
 
-    <div *ngIf="usuarioSelecionado">
-      <h4>Editando Usuário</h4>
-      <form [formGroup]="usuarioForm" (ngSubmit)="salvarEdicaoUsuario()">
-        <label>Nome:
-          <input formControlName="nome" />
-        </label>
-        <label>Email:
-          <input formControlName="email" />
-        </label>
-        <label>Telefone:
-          <input formControlName="telefone" />
-        </label>
-        <label>Rua:
-          <input formControlName="rua" />
-        </label>
-        <label>Bairro:
-          <input formControlName="bairro" />
-        </label>
-        <label>Senha:
-          <input formControlName="senha" type="password" />
-        </label>
+    <!-- Seção de Usuários -->
+    <section>
+      <h3>Usuários</h3>
+      <!-- Título da seção usuários -->
 
-        <button type="submit">Salvar</button>
-        <button type="button" (click)="cancelarEdicaoUsuario()">Cancelar</button>
-      </form>
-    </div>
-  </section>
+      <ul>
+        <!-- Lista não ordenada para exibir usuários -->
 
-  <hr />
+        <li *ngFor="let usuario of usuarios">
+          <!-- Loop para percorrer array 'usuarios' do componente -->
 
-  <!-- LIVROS -->
-  <section>
-    <h3>Livros</h3>
-    <ul>
-      <li *ngFor="let livro of livros">
-        <strong>{{ livro.titulo }}</strong> - {{ livro.autor }}
-        <button (click)="editarLivro(livro)">Editar</button>
-        <button (click)="deletarLivro(livro)">Deletar</button>
-      </li>
-    </ul>
+          <strong>{{ usuario.nome }}</strong> - {{ usuario.email }} - {{ usuario.telefone }}
+          <!-- Exibe nome em negrito, email e telefone -->
 
-    <div *ngIf="livroSelecionado">
-      <h4>Editando Livro</h4>
-      <form [formGroup]="livroForm" (ngSubmit)="salvarEdicaoLivro()">
-        <label>Título:
-          <input formControlName="titulo" />
-        </label>
-        <label>Autor:
-          <input formControlName="autor" />
-        </label>
-        <label>Resumo:
-          <textarea formControlName="resumo"></textarea>
-        </label>
-        <label>Capa (URL):
-          <input formControlName="capa" />
-        </label>
-        <label>Categoria:
-          <input formControlName="categoria" />
-        </label>
-        <label>Mais Lido:
-          <input type="checkbox" formControlName="maisLido" />
-        </label>
-        <label>Data de Publicação:
-          <input type="date" formControlName="dataPublicacao" />
-        </label>
+          <button (click)="editarUsuario(usuario)">Editar</button>
+          <!-- Botão que chama método para editar usuário, passando o objeto -->
 
-        <button type="submit">Salvar</button>
-        <button type="button" (click)="cancelarEdicaoLivro()">Cancelar</button>
-      </form>
-    </div>
-  </section>
+          <button (click)="deletarUsuario(usuario)">Deletar</button>
+          <!-- Botão que chama método para deletar usuário -->
+        </li>
+      </ul>
 
-  <br />
-  <button (click)="gotoVoltarHome()" class="btn">Voltar para Home</button>
-</div>
+      <!-- Formulário para edição do usuário selecionado -->
+      <div *ngIf="usuarioSelecionado">
+        <!-- Exibe o formulário somente se um usuário estiver selecionado -->
+
+        <h4>Editando Usuário</h4>
+        <form [formGroup]="usuarioForm" (ngSubmit)="salvarEdicaoUsuario()">
+          <!-- Formulário usando Reactive Forms, com submissão chamando método salvar -->
+
+          <label>Nome:
+            <input formControlName="nome" />
+            <!-- Campo input ligado ao controle 'nome' do FormGroup -->
+          </label>
+
+          <label>Email:
+            <input formControlName="email" />
+          </label>
+
+          <label>Telefone:
+            <input formControlName="telefone" />
+          </label>
+
+          <label>Rua:
+            <input formControlName="rua" />
+          </label>
+
+          <label>Bairro:
+            <input formControlName="bairro" />
+          </label>
+
+          <label>Senha:
+            <input formControlName="senha" type="password" />
+            <!-- Campo senha com tipo password para ocultar texto -->
+          </label>
+
+          <button type="submit">Salvar</button>
+          <!-- Botão para enviar formulário -->
+
+          <button type="button" (click)="cancelarEdicaoUsuario()">Cancelar</button>
+          <!-- Botão para cancelar edição, chama método que limpa seleção -->
+        </form>
+      </div>
+    </section>
+
+    <hr />
+    <!-- Linha horizontal para separar seções -->
+
+    <!-- Seção de Livros -->
+    <section>
+      <h3>Livros</h3>
+      <!-- Título da seção livros -->
+
+      <ul>
+        <!-- Lista não ordenada para exibir livros -->
+
+        <li *ngFor="let livro of livros">
+          <!-- Loop para percorrer array 'livros' -->
+
+          <strong>{{ livro.titulo }}</strong> - {{ livro.autor }}
+          <!-- Exibe título em negrito e autor -->
+
+          <button (click)="editarLivro(livro)">Editar</button>
+          <!-- Botão para editar livro -->
+
+          <button (click)="deletarLivro(livro)">Deletar</button>
+          <!-- Botão para deletar livro -->
+        </li>
+      </ul>
+
+      <!-- Formulário para edição do livro selecionado -->
+      <div *ngIf="livroSelecionado">
+        <!-- Exibe somente se um livro estiver selecionado -->
+
+        <h4>Editando Livro</h4>
+        <form [formGroup]="livroForm" (ngSubmit)="salvarEdicaoLivro()">
+          <!-- Formulário Reactive Form para livro -->
+
+          <label>Título:
+            <input formControlName="titulo" />
+          </label>
+
+          <label>Autor:
+            <input formControlName="autor" />
+          </label>
+
+          <label>Resumo:
+            <textarea formControlName="resumo"></textarea>
+            <!-- Campo texto maior para resumo -->
+          </label>
+
+          <label>Capa (URL):
+            <input formControlName="capa" />
+          </label>
+
+          <label>Categoria:
+            <input formControlName="categoria" />
+          </label>
+
+          <label>Mais Lido:
+            <input type="checkbox" formControlName="maisLido" />
+            <!-- Checkbox para marcar se é mais lido -->
+          </label>
+
+          <label>Data de Publicação:
+            <input type="date" formControlName="dataPublicacao" />
+            <!-- Campo data para publicação -->
+          </label>
+
+          <button type="submit">Salvar</button>
+          <!-- Botão para salvar alterações -->
+
+          <button type="button" (click)="cancelarEdicaoLivro()">Cancelar</button>
+          <!-- Botão para cancelar edição do livro -->
+        </form>
+      </div>
+    </section>
+
+    <br />
+    <!-- Espaço visual -->
+
+    <button (click)="gotoVoltarHome()" class="btn">Voltar para Home</button>
+    <!-- Botão para voltar para a página inicial -->
+  </div>
 </div>

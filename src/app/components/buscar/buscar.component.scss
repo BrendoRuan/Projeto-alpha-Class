@@ -1,6 +1,6 @@
 .buscar-container {
   padding: 40px 20px;
-  background: linear-gradient(to bottom, #004aad, #cde3ff);
+  background: linear-gradient(to bottom, #004aad, #cde3ff); // Fundo com gradiente azul
   min-height: 100vh;
   text-align: center;
   color: #fff;
@@ -8,19 +8,18 @@
 
 .buscar-container h2 {
   font-size: 2.2rem;
-  margin-bottom: 30px;
+  margin-bottom: 30px; // Espaço abaixo do título
 }
 
 .buscar-container input {
   padding: 12px 16px;
   width: 260px;
-  max-width: 90%;
   border-radius: 8px;
   border: none;
   margin-right: 10px;
   font-size: 1rem;
   outline: none;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); // Sombra suave para o input
 }
 
 .buscar-container button {
@@ -31,7 +30,7 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease; // Transições suaves
 }
 
 .buscar-container button:hover {
@@ -39,16 +38,18 @@
   transform: scale(1.05);
 }
 
+// Grid de resultados
 .livro-resultados {
   margin-top: 40px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); // Responsivo
   gap: 30px;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
 
+// Estilo do cartão individual de livro
 .livro-resultados .livro-card {
   background-color: #ffffff;
   border-radius: 12px;
@@ -76,6 +77,7 @@
   margin-bottom: 12px;
 }
 
+// Botão de voltar
 .btn-voltar {
   background-color: #004aad;
   color: white;

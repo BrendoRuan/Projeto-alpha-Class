@@ -1,39 +1,55 @@
 <div class="add-livro-container">
+  <!-- Título principal do formulário -->
   <h2 class="form-title">Adicionar Novo Livro</h2>
+
+  <!-- Formulário reativo com binding para salvarLivro() no submit -->
   <form [formGroup]="livroForm" (ngSubmit)="salvarLivro()" class="form-box">
+    
+    <!-- Campo: Título do livro -->
     <div class="form-group">
       <label for="titulo">Título:</label>
       <input id="titulo" formControlName="titulo" required />
     </div>
 
+    <!-- Campo: Autor do livro -->
     <div class="form-group">
       <label for="autor">Autor:</label>
       <input id="autor" formControlName="autor" required />
     </div>
 
+    <!-- Campo: Resumo do livro -->
     <div class="form-group">
       <label for="resumo">Resumo:</label>
       <textarea id="resumo" formControlName="resumo" required></textarea>
     </div>
 
+    <!-- Campo: URL da capa do livro -->
     <div class="form-group">
       <label for="capa">URL da Capa:</label>
       <input id="capa" formControlName="capa" required />
     </div>
 
+    <!-- Campo: Categoria (não usado no formGroup atual) -->
     <div class="form-group">
       <label for="categoria">Categoria:</label>
       <input id="categoria" formControlName="categoria" required />
     </div>
 
+    <!-- Campo: Data de publicação (também não no formGroup atual) -->
     <div class="form-group">
       <label for="dataPublicacao">Data de Publicação:</label>
       <input id="dataPublicacao" type="date" formControlName="dataPublicacao" required />
     </div>
 
+    <!-- Botões de ação -->
     <div class="form-actions">
+      <!-- Salvar (desabilita se o formulário estiver inválido) -->
       <button type="submit" [disabled]="livroForm.invalid" class="btn">Salvar</button>
+
+      <!-- Cancelar volta à rota '/home' -->
       <button type="button" (click)="cancelar()" class="btn cancelar">Cancelar</button>
+
+      <!-- Botão extra para voltar para página interna -->
       <button type="button" (click)="gotoVoltarHome()" class="btn cancelar">Voltar</button>
     </div>
   </form>
